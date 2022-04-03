@@ -7,6 +7,7 @@ const path = require("path");
 const { config } = require('dotenv')
 const surah = require("./db/quran.all.json")
 const listsurah = require("./db/listsurah.json")
+const PORT = process.env.PORT || 8080
 config()
 const ROOT = path.join(__dirname, "public");
 const VIEW_ROOT = path.join(__dirname, "views");
@@ -41,5 +42,5 @@ app.use((req, res, next) => res.status(404).send(`<html>
 </html>`))
 
 
-const listener = app.listen(process.env.PORT || 8080)
-console.log('App Running On PORT : '+ process.env.PORT || 8080)
+const listener = app.listen(PORT)
+console.log('App Running On PORT : '+ PORT)
