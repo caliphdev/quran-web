@@ -18,7 +18,7 @@ app.set("view engine", "ejs");
 app.set("views", VIEW_ROOT);
 
 // Pages 
-app.get('/', (req,res) => {
+app.get(['/', '/index'], (req,res) => {
 res.render('index')
 })
 app.get('/kebijakan-privasi', (req, res) => {
@@ -29,6 +29,7 @@ app.get('/surah/:surah', (req, res, next) => {
 let { surah:p } = req.params;
 json = surah[p]
 namasurah = listsurah[p]
+if (!namasurah) return next()
 res.render('result', { json, surah:p, namasurah })
 })
 app.use((req, res, next) => res.status(404).send(`<html>
