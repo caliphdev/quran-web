@@ -1,0 +1,27 @@
+{
+    "name": "myquran-web",
+    "version": "1.0.3",
+    "description": "Website myquran from ExpressJS",
+    "main": "index.js",
+    "scripts": {
+        "heroku-prebuild": "npm install",
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "alquran",
+        "quran",
+        "al-quran",
+        "quran-online",
+        "myquran"
+    ],
+    "author": "caliph91",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^16.0.0",
+        "ejs": "github:caliph91/ejs",
+        "express": "^4.17.1",
+        "morgan": "^1.10.0"
+    }
+}

@@ -1,0 +1,84 @@
+/**
+ * Compilation and rendering options.
+ *
+ * @typedef Options
+ * @type {Object}
+ *
+ * @property {Boolean} [debug=false]
+ * Log generated JavaScript source for the EJS template to the console.
+ *
+ * @property {Boolean} [compileDebug=true]
+ * Include additional runtime debugging information in generated template
+ * functions.
+ *
+ * @property {Boolean} [_with=true]
+ * Whether or not to use `with () {}` construct in the generated template
+ * functions. If set to `false`, data is still accessible through the object
+ * whose name is specified by {@link module:ejs.localsName} (default to
+ * `locals`).
+ *
+ * @property {Boolean} [strict=false]
+ * Whether to run in strict mode or not.
+ * Enforces `_with=false`.
+ *
+ * @property {String[]} [destructuredLocals=[]]
+ * An array of local variables that are always destructured from {@link module:ejs.localsName},
+ * available even in strict mode.
+ *
+ * @property {Boolean} [rmWhitespace=false]
+ * Remove all safe-to-remove whitespace, including leading and trailing
+ * whitespace. It also enables a safer version of `-%>` line slurping for all
+ * scriptlet tags (it does not strip new lines of tags in the middle of a
+ * line).
+ *
+ * @property {Boolean} [client=false]
+ * Whether or not to compile a {@link ClientFunction} that can be rendered
+ * in the browser without depending on ejs.js. Otherwise, a {@link TemplateFunction}
+ * will be compiled.
+ *
+ * @property {EscapeCallback} [escape={@link module:utils.escapeXML}]
+ * The escaping function used with `<%=` construct. It is used in rendering
+ * and is `.toString()`ed in the generation of client functions.
+ *
+ * @property {String}  [filename=undefined]
+ * The filename of the template. Required for inclusion and caching unless
+ * you are using {@link module:ejs.renderFile}. Also used for error reporting.
+ *
+ * @property {String}  [root=undefined]
+ * The path to the project root. When this is set, absolute paths for includes
+ * (/filename.ejs) will be relative to the project root.
+ *
+ * @property {String}  [openDelimiter='<']
+ * The opening delimiter for all statements. This allows you to clearly delinate
+ * the difference between template code and existing delimiters. (It is recommended
+ * to synchronize this with the closeDelimiter property.)
+ *
+ * @property {String}  [closeDelimiter='>']
+ * The closing delimiter for all statements. This allows to to clearly delinate
+ * the difference between template code and existing delimiters. (It is recommended
+ * to synchronize this with the openDelimiter property.)
+ *
+ * @property {String}  [delimiter='%']
+ * The delimiter used in template compilation.
+ *
+ * @property {Boolean} [cache=false]
+ * Whether or not to enable caching of template functions. Beware that
+ * the options of compilation are not checked as being the same, so
+ * special handling is required if, for example, you want to cache client
+ * and regular functions of the same file.
+ *
+ * Requires `filename` to be set. Only works with rendering function.
+ *
+ * @property {Object}  [context=this]
+ * The Object to which `this` is set during rendering.
+ *
+ * @property {Object}  [scope=this]
+ * Alias of `context`. Deprecated.
+ *
+ * @property {Boolean} [async=false]
+ * Whether or not to create an async function instead of a regular function.
+ * This requires language support.
+ *
+ * @static
+ * @global
+ */
