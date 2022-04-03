@@ -27,12 +27,12 @@
 <header class="header-nav">
 <h1 class="logo"><a href="/">Myquran</a></h1>
 </header>
-<p class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
 <main class="content wrap cf">
 <article class="surat">
 <header>
 <h1 class="page-title">Surat <%= namasurah %></h1>
 </header>
+<p class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
 <ol>
 <% json.map(a => { %>
 <li><span class="ayat" title="Ayat <%= a.ayat %>"><%= a.bacaan %></span><span class="bacaan"><%= a.latin %></span><span class="arti"><%= a.arti %></span></li>
