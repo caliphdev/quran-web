@@ -1,4 +1,5 @@
 const express = require("express");
+const { search } = require("caliph-api");
 const app = express();
 var bodyParser = require("body-parser");
 const fs = require('fs');
@@ -26,9 +27,10 @@ app.get('/kebijakan-privasi', (req, res) => {
 res.render('privasi')
 })
 
-app.get('/surah/:surah', (req, res, next) => {
+app.get('/surah/:surah', async (req, res, next) => {
 let { surah:p } = req.params;
 json = surah[p]
+if (!json) json = (await search.quran(p)).result;
 namasurah = listsurah[p]
 if (!namasurah) return next()
 res.render('result', { json, surah:p, namasurah })
