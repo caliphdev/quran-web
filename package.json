@@ -20,7 +20,8 @@
     "license": "MIT",
     "dependencies": {
         "dotenv": "^16.0.0",
-        "ejs": "github:caliph91/ejs",
+        "ejs": "github:caliphdev/ejs",
+        "caliph-api": "github:caliphdev/caliph-api",
         "express": "^4.17.1",
         "morgan": "^1.10.0"
     }
